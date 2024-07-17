@@ -35,7 +35,7 @@ If any of the packages above are not found check if your distro installs them li
 ##### Installation
 For all distros:
 ```bash
-git clone git://github.com/lwfinger/rtl8723du.git -b v5.13.4
+git clone git://github.com/lwfinger/rtl8723du.git
 cd rtl8723du
 make
 sudo make install

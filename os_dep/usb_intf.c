@@ -136,6 +136,7 @@ struct rtw_usb_drv {
 };
 
 static struct rtw_usb_drv usb_drv = {
+	.usbdrv.supports_autosuspend = 1,
 	.usbdrv.name = (char *)DRV_NAME,
 	.usbdrv.probe = rtw_drv_init,
 	.usbdrv.disconnect = rtw_dev_remove,
@@ -144,12 +145,14 @@ static struct rtw_usb_drv usb_drv = {
 	.usbdrv.resume = rtw_resume,
 #if (LINUX_VERSION_CODE > KERNEL_VERSION(2, 6, 22))
 	.usbdrv.reset_resume   = rtw_resume,
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(6, 8, 0))
+	.usbdrv.driver.shutdown = rtw_dev_shutdown,
 #endif
 #ifdef CONFIG_AUTOSUSPEND
 	.usbdrv.supports_autosuspend = 1,
 #endif
 
-#if (LINUX_VERSION_CODE >= KERNEL_VERSION(2, 6, 19))
+#elif (LINUX_VERSION_CODE >= KERNEL_VERSION(2, 6, 19))
 	.usbdrv.drvwrap.driver.shutdown = rtw_dev_shutdown,
 #else
 	.usbdrv.driver.shutdown = rtw_dev_shutdown,

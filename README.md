@@ -35,7 +35,7 @@ If any of the packages above are not found check if your distro installs them li
 ##### Installation
 For all distros:
 ```bash
-git clone git://github.com/lwfinger/rtl8723du.git
+git clone git://github.com/IAMLEGENDZ/rtl8723du.git
 cd rtl8723du
 make
 sudo make install
@@ -63,7 +63,7 @@ Remember, this MUST be done whenever you get a new kernel - no exceptions.
 ##### Installation with module signing for SecureBoot
 For all distros:
 ```bash
-git clone git://github.com/lwfinger/rtl8723du.git
+git clone git://github.com/IAMLEGENDZ/rtl8723du.git
 cd rtl8723du
 make
 sudo make sign-install

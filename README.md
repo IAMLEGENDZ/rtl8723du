@@ -8,6 +8,8 @@ This repository includes obsolete drivers for the following card:
 
 Realtek RTL8723DU
 
+Tested with Linux Kernel versions (6.8 , 6.9 , 6.10) and it's working.
+
 ### Installation instruction
 ##### Requirements
 You will need to install "make", "gcc", "kernel headers", "kernel build essentials", and "git".
